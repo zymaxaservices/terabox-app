@@ -109,7 +109,7 @@ export async function GET(req, res) {
       withCredentials: true,
     });
     const responseData2 = req2.data;
-    return NextResponse.json(responseData2, { status: 200 });
+    return NextResponse.json(req2, { status: 200 });
   } catch (error) {
     return NextResponse.json({ error: "Unknown Error" }, { status: 400 });
   }
