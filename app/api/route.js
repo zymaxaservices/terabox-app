@@ -111,6 +111,6 @@ export async function GET(req, res) {
     const responseData2 = req2.data;
     return NextResponse.json(req2, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ error: "Unknown Error" }, { status: 400 });
+    return NextResponse.json({ error: error}, { status: 400 });
   }
 }
