@@ -64,10 +64,6 @@ export async function GET(req, res) {
     const decryptedData = decryptedBytes.toString(CryptoJS.enc.Utf8);
     const { token: decryptedToken, expiresAt } = JSON.parse(decryptedData);
     url = decryptedToken;
-    console.log(url, expiresAt);
-    if (Date.now() > expiresAt) {
-      return NextResponse.json({ error: "Expired token" }, { status: 401 });
-    }
   } catch (error) {
     console.error("Decryption error:", error);
     return NextResponse.json(
